@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WXercises.Enums;
@@ -38,7 +39,7 @@ namespace WXercises.Controllers
         // GET api/answers/sort
         [Route("trolleyTotal")]
         [HttpPost]
-        public async Task<ActionResult<decimal>> TrolleyTotal(TrolleyTotalRequest request)
+        public async Task<ActionResult<decimal>> TrolleyTotal([Required] TrolleyTotalRequest request)
         {
             return await _productsService.TrolleyTotal(request);
         }
