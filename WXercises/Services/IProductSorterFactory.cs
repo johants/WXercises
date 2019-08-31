@@ -4,6 +4,6 @@ namespace WXercises.Services
 {
     public interface IProductSorterFactory
     {
-        BaseProductSorter GetProductSorter(SortOption sortOption);
+        IProductSorter GetProductSorter(SortOption sortOption);
     }
 }

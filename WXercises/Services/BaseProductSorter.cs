@@ -4,11 +4,12 @@ using WXercises.Models;
 
 namespace WXercises.Services
 {
-    /// <summary>
-    /// Template Design Pattern
-    /// </summary>
-    public abstract class BaseProductSorter
+    public abstract class BaseProductSorter : IProductSorter
     {
-        public abstract List<Product> Sort(List<Product> products);
+        public virtual List<Product> Sort(List<Product> products)
+        {
+            // Default is to not sort and return the products as is.
+            return products;
+        }
     }
 }
