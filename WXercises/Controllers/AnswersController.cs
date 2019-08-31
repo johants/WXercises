@@ -14,10 +14,12 @@ namespace WXercises.Controllers
     public class AnswersController : ControllerBase
     {
         private readonly IProductsService _productsService;
+        private readonly IUserService _userService;
 
-        public AnswersController(IProductsService productsService)
+        public AnswersController(IProductsService productsService, IUserService userService)
         {
             _productsService = productsService;
+            _userService = userService;
         }
 
         // GET api/answers/user
@@ -25,7 +27,7 @@ namespace WXercises.Controllers
         [HttpGet]
         public ActionResult<User> Get()
         {
-            return new User("Johan Sugiarto", "94cd0001-3e70-44d3-a1d1-ad62ba9f5ff2");
+            return _userService.GetUser();
         }
 
         // GET api/answers/sort
@@ -36,7 +38,7 @@ namespace WXercises.Controllers
             return await _productsService.Sort(sortOption);
         }
 
-        // GET api/answers/sort
+        // POST api/answers/trolleyTotal
         [Route("trolleyTotal")]
         [HttpPost]
         public async Task<ActionResult<decimal>> TrolleyTotal([Required] TrolleyTotalRequest request)

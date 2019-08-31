@@ -13,24 +13,30 @@ namespace WXercises.UnitTests.Controllers
     public class AnswersControllerTests
     {
         private IProductsService _productsService;
+        private IUserService _userService;
         private AnswersController _answersController;
         public AnswersControllerTests()
         {
             _productsService = Substitute.For<IProductsService>();
-            _answersController = new AnswersController(_productsService);
+            _userService = Substitute.For<IUserService>();
+            _answersController = new AnswersController(_productsService, _userService);
         }
 
         [Fact]
         public void GetUser_should_return_user()
         {
-            // Arrange, Act
+            // Arrange
+            var user = new User("Johan Sugiarto", "94cd0001-3e70-44d3-a1d1-ad62ba9f5ff2");
+            _userService.GetUser().Returns(user);
+
+            // Act
             var result = _answersController.Get();
 
             // Assert
             result.Should().NotBeNull();
 
             var content = result.Value;
-            content.Should().BeEquivalentTo(new User("Johan Sugiarto", "94cd0001-3e70-44d3-a1d1-ad62ba9f5ff2"));
+            content.Should().BeEquivalentTo(user);
         }
 
         [Fact]

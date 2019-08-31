@@ -66,6 +66,7 @@ namespace WXercises
             services
                 .AddSingleton<IApiResourceProxy, ApiResourceProxy>()
                 .AddSingleton<IProductSorterFactory, ProductSorterFactory>()
+                .AddScoped<IUserService, UserService>()
                 .AddScoped<IProductsService, ProductsService>();
             
             services.AddHttpClientWithCircuitBreaker<IApiResourceProxy, ApiResourceProxy>(Constants.ProxyPrefix.ApiResourceProxy, _configuration);
