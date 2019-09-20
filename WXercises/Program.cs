@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NLog.Web;
 
@@ -38,6 +40,17 @@ namespace WXercises
                     logging.ClearProviders();
                     logging.SetMinimumLevel(LogLevel.Trace);
                 })
+                .ConfigureAppConfiguration((hosting, config) =>
+                {
+                    var env = hosting.HostingEnvironment;
+
+                    config
+                        .SetBasePath(env.ContentRootPath)
+                        .AddJsonFile("appsettings.json", false, true)
+                        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true)
+                        .AddEnvironmentVariables();
+                })
+                .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseNLog();  // NLog: setup NLog for Dependency injection;
     }
 }

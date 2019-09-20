@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{CC7807AC-D60
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D209D667-9F4C-4C54-AB87-5F8BD5A08052}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WXercises.UnitTests", "Tests\WXercises.UnitTests\WXercises.UnitTests.csproj", "{A7091EDB-CA1A-4C2A-8ACC-4E70F676987B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WXercises.UnitTests", "Tests\WXercises.UnitTests\WXercises.UnitTests.csproj", "{A7091EDB-CA1A-4C2A-8ACC-4E70F676987B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WXercises.AcceptanceTests", "Tests\WXercises.AcceptanceTests\WXercises.AcceptanceTests.csproj", "{15C636F6-EAA5-42B7-A8AA-F14D82B0B5D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{A7091EDB-CA1A-4C2A-8ACC-4E70F676987B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7091EDB-CA1A-4C2A-8ACC-4E70F676987B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7091EDB-CA1A-4C2A-8ACC-4E70F676987B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C636F6-EAA5-42B7-A8AA-F14D82B0B5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C636F6-EAA5-42B7-A8AA-F14D82B0B5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C636F6-EAA5-42B7-A8AA-F14D82B0B5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C636F6-EAA5-42B7-A8AA-F14D82B0B5D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A5F0A624-93D8-4700-90F2-44D4A96CA6F7} = {CC7807AC-D603-4FB8-B0D9-C9CC646ED7B4}
 		{A7091EDB-CA1A-4C2A-8ACC-4E70F676987B} = {D209D667-9F4C-4C54-AB87-5F8BD5A08052}
+		{15C636F6-EAA5-42B7-A8AA-F14D82B0B5D6} = {D209D667-9F4C-4C54-AB87-5F8BD5A08052}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E24BA9A-1FAB-4275-BB4C-076A564DFA6E}
